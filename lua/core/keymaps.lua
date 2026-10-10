@@ -15,6 +15,7 @@ keymap.set('n', ',,', '/<++><CR>:noh<CR>ca<', opts)
 keymap.set('i', ',,', '<Esc>/<++><CR>:noh<CR>ca<', opts)
 keymap.set("n", "<leader>a", "<cmd>silent %y+<CR>", opts)
 keymap.set("n", "<leader>d", "ggdG", opts)
+keymap.set("n", "<leader>u", "<cmd>silent let @+ = expand('<cfile>')<CR>", opts)
 keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
