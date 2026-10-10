@@ -7,36 +7,6 @@ au VimLeave,VimSuspend * set guicursor=a:ver25-blinkon0
 
 au VimEnter,WinEnter,BufWinEnter * hi Normal ctermbg=none guibg=none
 
-" au BufNewFile *.sh 0r ~/.config/nvim/skel/header.txt
-
-" au BufNewFile *.sh :call AddHeaderInfo() | norm 8G
-au BufNewFile *.sh :call AddHeaderInfo2Bash() | startinsert! | norm ,,
-function! AddHeaderInfo2Bash()
-    call setline(1, "#!/usr/bin/env bash")
-    call setline(2, "")
-    call setline(3, "# ====================================================")
-    call setline(4, "#    Filename:      ".expand("%:t"))
-    call setline(5, "#    Date:          ".strftime("%Y-%m-%d %H:%M"))
-    call setline(6, "#    Author:        siuyutpang")
-    call setline(7, "#    Email:         siuyutpang@gmail.com")
-    call setline(8, "#    Description:    <++>")
-    call setline(9, "# ====================================================")
-    call setline(10, "")
-    call setline(11, "<++>")
-endfunction
-
-au BufNewFile *.md :call AddHeaderInfo2Markdown() | startinsert! | norm ,,
-function! AddHeaderInfo2Markdown()
-    call setline(1, "---")
-    call setline(2, "title:  <++>")
-    call setline(3, "date: ".strftime("%Y-%m-%d %H:%M:%S"))
-    call setline(4, "tags:")
-    call setline(5, "categories:")
-    call setline(6, "---")
-    call setline(7, "")
-    call setline(8, "<++>")
-endfunction
-
 " auto delete trailing whitespace & reset cursor position
 autocmd BufWritePre * let currPos = getpos(".")
 autocmd BufWritePre * %s/\s\+$//e
