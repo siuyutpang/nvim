@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- Reload files changed outside Neovim.
+opt.autoread = true
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true
